@@ -1,0 +1,838 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+}
+
+#logo{
+    width: 100px;
+    height: 100px;
+}
+
+/* Header & navbar & signin*/
+#header{
+    display: flex;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem 5rem;
+    position: fixed;
+    background-color: black;
+    z-index: 1000; 
+    
+}
+
+#selections{
+    display: flex;
+}
+
+.navigation{
+    margin: 1rem;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+.navigation:hover{
+    border-bottom: 2px solid white;
+}
+
+li{
+    list-style: none;
+}
+
+.reg{
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    margin: 0.25rem;
+}
+
+.sign{
+    color: white;
+    background-color: black;
+}
+
+.sign:hover{
+    background-color: white;
+    color: black;
+}
+
+
+
+/* ----------------------------------------------------------------- */
+/* Hero section */
+#hero{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    
+}
+
+.cotd-text{
+    text-align: center;
+    width: 100%; 
+    /* never make 100vw that will make white space */
+    font-weight: lighter;
+    font-size: 5rem;
+    color: white;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Bebas Neue';
+     z-index: -2;
+}
+
+.car-text{
+    color: white;
+    font-size: 25rem;
+    font-family: 'Anton';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+.car-img{
+    width: 900px;
+    height: auto;
+    transition: 0.5s linear 0.2s;
+}
+.car-img:hover{
+    width: 1000px;
+    height: auto;
+}
+
+.circle{
+    width: 50%;
+    height: 80%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,0,0,1) 0%, rgba(255,0,0,0) 60%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+
+.pattern{
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    opacity: 10%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+
+#see-more{
+    display: inline-block;
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 2rem;
+    padding: 1rem ;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+#see-more:hover{
+    background-color: darkgray;
+    z-index: 3;
+}
+
+#moving-text{
+    position: absolute;
+    top: 33%;
+    right: 50%;
+    z-index: -1;
+}
+
+#curve{
+    fill: transparent;
+}
+
+.text{
+    fill:red;
+    transform-origin: 50% 50%;
+    animation: rotate 15s linear infinite;
+}
+
+
+
+/* @keyframes rotate{ 
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+} */
+
+
+/* ------------------------------------------------------------------------------ */
+/* Reviews section */
+#reviews{
+    width: 100%;
+    height: 100%;
+    background-color: #080808;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 15rem;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+}
+ .section-title{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    color: white;
+    font-size: 3rem;
+ }
+
+    /* Left big card */
+    .main-card {
+        flex: 2; /* takes more space than side */
+        min-width: 300px;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .main-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: 0.3s ease-in-out; 
+    }
+
+    .main-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .main-card .overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 20px;
+        background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    }
+    .tag {
+        background-color: yellow;
+        color: black;
+        font-size: 0.8rem;
+        padding: 3px 6px;
+        border-radius: 3px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    .main-card h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    /* Right news list */
+    .side-news {
+        flex: 1;
+        min-width: 250px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .side-card {
+        display: flex;
+        background-color: #1b1b1b;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .side-card img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+    }
+    .side-card div {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .side-card h3 {
+        font-size: 0.9rem;
+        margin: 0;
+        color: white;
+    }
+    .unlocked {
+        background-color: red;
+        color: white;
+        font-size: 0.7rem;
+        padding: 2px 4px;
+        border-radius: 3px;
+        margin-bottom: 3px;
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    
+
+/* ---------------------------------------------------------------------------- */
+/* Racing */
+#racing{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    padding: 5rem 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+#race-container{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.race-container-right {
+    position: relative;
+    width: 350px;
+    height: 620px;
+    border-radius: 1rem;
+    overflow: hidden; /* keeps images inside */
+}
+
+#racer-background {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+    transform: scale(1.5);
+    transition: transform 0.4s ease;
+}
+
+#racer {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    width: 300px;
+    transition: transform 0.4s ease;
+    z-index: 2; /* keep driver above background */
+}
+
+/* Hover on container, not individual images */
+.race-container-right:hover #racer-background {
+    transform: scale(1); /* shrink background */
+}
+
+.race-container-right:hover #racer {
+    transform: scale(1.1); /* grow driver */
+}
+
+
+
+.racebox-headline{
+    width: 800px;
+    height: 300px;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.racebox-img{
+    width: 800px;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.racebox-img:hover{
+    transform: scale(1.05);
+}
+
+.top-box{
+    margin-bottom: 1rem;
+}
+
+/*----------------------------------------------------------------------*/
+/* News */
+
+#news{
+    width: 100%;
+    height: 100%;
+    background-color: #080808;
+    padding: 5rem 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.news-item {
+    display: flex;
+    align-items: flex-start;
+    max-width: 700px;
+    max-height: 160px;
+    background-color: #191919;
+    margin: 1rem;
+    border-radius: 0.5rem;
+}
+
+  .news-text {
+    flex: 2;
+    margin: 1rem;
+  }
+
+
+  .news-text small {
+    display: block;
+    font-size: 0.8rem;
+    color: gray;
+    margin-bottom: 8px;
+  }
+
+  .news-text h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .news-text h2 a {
+    text-decoration: none;
+    color: white;
+  }
+
+
+  .news-image {
+    flex: 1;
+    text-align: right;
+  }
+
+  .news-image img {
+    display: block;
+    max-width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+/* ---- */
+  .signup-box{
+    width: 300px;
+    margin: 2rem;
+    font-family: Arial, sans-serif;
+    color: white;
+    padding: 1rem;
+    background-color: #191919;
+    border-radius: 0.5rem;
+  }
+
+  .signup-form{
+    margin: 1rem 0;
+  }
+
+/*----------------------------------------------------------------------*/
+/* Footer */
+footer{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    padding: 1rem 20rem;
+}
+
+
+#footer-top-section{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.footer-logo{
+    width: 150px;
+    height: 150px;
+}
+
+#socials{
+    display: flex;
+}
+
+.social a{
+    margin: 1rem;
+    padding: 0.3rem 0.2rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.social a:hover {
+    background-color: white;   /* circle background on hover */
+    color: black;               /* icon color change */
+    text-decoration: none;      /* keep icons clean */
+}
+
+.social li{
+    list-style: none;
+}
+
+hr{
+    margin-top: -1.5rem;
+    border: 1px dashed white;
+}
+
+
+#footer-bot-section{
+    padding: 1rem 0;
+    color: white;
+    font-size: 0.7rem;
+}
+
+.foot-bot{
+    padding: 1rem 0;
+}
+
+.foot-bot a{
+    text-decoration: none;
+    color: white;
+    margin: 0 0.5rem;
+}
+
+.foot-bot a:hover{
+    text-decoration:underline;
+} 
+
+.toppy{
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+
+
+
+#copyright{
+    color: white;
+}
+
+
+
+/* Media quer */
+
+@media only screen and (max-width: 1280px) {
+
+
+  #reviews{
+    width: 100vw;
+    height: 100%;
+    background-color: #080808;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 3rem;
+}
+
+#racing{
+    padding: 5rem 0rem;
+}
+
+#news{
+    width: 100%;
+    height: 100%;
+    background-color: #080808;
+    padding: 5rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+    }
+
+
+footer{
+    width: 100%;
+    height: 40vh;
+    background-color: black;
+    padding: 1rem 2rem;
+}
+
+}
+
+/* --- Mobile responsiveness --- */
+@media (max-width: 900px) {
+  #header {
+    flex-direction: column;
+    padding: 1rem 1rem;
+    height: auto;
+    position: static;
+  }
+  #logo {
+    width: 70px;
+    height: 70px;
+  }
+  #mid-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #selections {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #right-sg {
+    margin-top: 0.5rem;
+  }
+  #hero {
+    height: auto;
+    min-height: 60vh;
+    padding: 2rem 0;
+  }
+  .car-text {
+    font-size: 5rem;
+    top: 20%;
+  }
+  .car-img {
+    width: 95vw;
+    max-width: 350px;
+  }
+  .cotd-text {
+    font-size: 2rem;
+    top: 10%;
+  }
+  .circle, .pattern {
+    display: none;
+  }
+  #see-more {
+    position: static;
+    margin: 2rem auto 0 auto;
+    display: block;
+  }
+  #reviews {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1rem;
+  }
+  .main-card, .side-news {
+    min-width: 0;
+    width: 100%;
+  }
+  .side-news {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .side-card {
+    width: 48%;
+    min-width: 140px;
+    margin-bottom: 0.5rem;
+  }
+  #racing {
+    padding: 2rem 0.5rem;
+  }
+  #race-container {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+  .race-container-left, .race-container-right {
+    width: 100% !important;
+    min-width: 0;
+    height: auto;
+  }
+  
+  .racebox-headline, .racebox-img {
+
+    height: 180px !important;
+    min-width: 0;
+  }
+  
+    #racer {
+        position: absolute;
+        bottom: 0;
+        right: 30px;
+        width: 100px;
+        transition: transform 0.4s ease;
+        z-index: 2; /* keep driver above background */
+    }
+  #racer-background, #racer {
+
+    max-width: 100%;
+    height: 180px !important;
+    object-fit: cover;
+    right: 0;
+  }
+  #news {
+    flex-direction: column;
+    padding: 2rem 0.5rem;
+  }
+  .news-item {
+    flex-direction: column;
+    max-width: 100%;
+    max-height: none;
+    margin: 0.5rem 0;
+  }
+  .news-image img {
+    width: 100%;
+    height: 180px;
+  }
+  .signup-box {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  footer {
+    padding: 1rem 0.5rem;
+  }
+  #footer-top-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .footer-logo {
+    width: 80px;
+    height: 80px;
+  }
+  #footer-bot-section {
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+  }
+  .foot-bot {
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  html, body {
+    font-size: 14px;
+  }
+  #header {
+    flex-direction: column;
+    padding: 0.5rem 0.2rem;
+  }
+  #logo {
+    width: 50px;
+    height: 50px;
+  }
+  .car-text {
+    font-size: 2.5rem;
+    top: 28%;
+  }
+  .cotd-text {
+    font-size: 1.2rem;
+    top: 20%;
+  }
+  .car-img {
+    width: 90vw;
+    max-width: 220px;
+  }
+    #see-more{
+    display: inline-block;
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 2rem;
+    padding: 1rem ;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: sans-serif;
+    }
+
+    #selections{
+        display: none;
+    }
+
+    #racer {
+        position: absolute;
+        bottom: 0;
+        right: 30px;
+        width: 100px;
+        transition: transform 0.4s ease;
+        z-index: 2; /* keep driver above background */
+    }
+
+  #reviews, #news, #racing {
+    padding: 1rem 0.5rem;
+  }
+  .main-card, .side-news, .side-card, .racebox-headline, .racebox-img, .race-container-right {
+    width: 100% !important;
+    min-width: 0;
+    height: auto !important;
+  }
+  .side-news {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .side-card {
+    width: 100%;
+    min-width: 0;
+  }
+  .news-image img {
+    height: 120px;
+  }
+  .signup-box {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .footer-logo {
+    width: 50px;
+    height: 50px;
+  }
+  #footer-bot-section {
+    font-size: 0.7rem;
+  }
+
+  .foot-bot{
+    padding-top: 2rem;
+  }
+  #footer-top-section{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    }
+
+    hr{
+        margin-top: 2rem;
+    }
+  
+
+}
+
+
+
